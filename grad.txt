@@ -1,0 +1,30 @@
+UnityC++
+The Google services plugin for Gradle loads the google-services.json file you just downloaded. Modify your build.gradle files to use the plugin.
+
+Project-level build.gradle (<project>/build.gradle):
+
+Copied
+
+buildscript {
+  dependencies {
+    // Add this line
+    classpath 'com.google.gms:google-services:4.0.1'
+  }
+}
+App-level build.gradle (<project>/<app-module>/build.gradle):
+
+Copied
+
+
+Copied
+
+dependencies {
+  // Add this line
+  implementation 'com.google.firebase:firebase-core:16.0.1'
+}
+...
+// Add to the bottom of the file
+apply plugin: 'com.google.gms.google-services'
+Includes Analytics by default 
+
+Finally, press "Sync now" in the bar that appears in the IDE:
